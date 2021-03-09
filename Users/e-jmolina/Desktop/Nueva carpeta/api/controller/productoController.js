@@ -10,10 +10,9 @@ let guardar = (req, res) => {
 
     if (!req.files)
         return res.status(400).send('No files were uploaded.');
-
     let imagen = req.files.imagen;
 
-    imagen.mv(`./uploads/productos/${imagen.name}`, (err) => {
+    imagen.mv(`uploads/productos/${imagen.name}`, (err) => {
         if (err)
             return res.status(500).send(err);
 
@@ -22,8 +21,8 @@ let guardar = (req, res) => {
         let producto = new Producto({
             nombre: body.nombre,
             categoria: body.categoria,
-            precio: body.precio,
             preciounitario: body.preciounitario,
+            precio: body.precio,
             cantidad: body.cantidad,
             imagen: imagen.name
         });

@@ -13,6 +13,7 @@ router.put("/usuario/:id", usuarioController.modificar);
 
 router.delete("/usuario/:id", usuarioController.eliminar);
 
-router.post("/login", usuarioController.login);
+;
+router.post("/login", usuarioController.login)
 
 module.exports = router;
